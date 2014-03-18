@@ -6,6 +6,42 @@ using System.Threading.Tasks;
 
 namespace JsonNetTest
 {
+	public class Foo
+	{
+		private Bar myBarField;
+		public Bar myBar
+		{
+			get
+			{
+				return myBarField;
+			}
+			set { myBarField = value; }
+		}
+
+		private string nameField;
+		public string name
+		{
+			get
+			{
+				return nameField;
+			}
+			set
+			{
+				nameField = value;
+			}
+		}
+
+		public virtual bool ShouldSerializemyBar()
+		{
+			return (myBar != null);
+		}
+
+		public virtual bool ShouldSerializename()
+		{
+			return (name != null);
+		}
+	}
+
 	public class Bar
 	{
 		private Baz[] myBazField;
@@ -18,14 +54,44 @@ namespace JsonNetTest
 			set { myBazField = value; }
 		}
 
+		private string nameField;
+		public string name
+		{
+			get
+			{
+				return nameField;
+			}
+			set
+			{
+				nameField = value;
+			}
+		}
+
 		public virtual bool ShouldSerializemyBaz()
 		{
 			return (myBaz != null);
+		}
+
+		public virtual bool ShouldSerializename()
+		{
+			return (name != null);
 		}
 	}
 
 	public class Baz
 	{
+		private Frob[] myFrobField;
+		public Frob[] myFrob
+		{
+			get
+			{
+				return myFrobField;
+			}
+			set { myFrobField = value; }
+		}
+
+		
+
 		private string nameField;
 		public string name
 		{
@@ -40,23 +106,28 @@ namespace JsonNetTest
 		{
 			return (name != null);
 		}
+
+		public virtual bool ShouldSerializemyFrob()
+		{
+			return (name != null);
+		}
 	}
 
-	public class Foo
+	public class Frob
 	{
-		private Bar myBarField;
-		public Bar myBar
+		private string nameField;
+		public string name
 		{
 			get
 			{
-				return myBarField;
+				return nameField;
 			}
-			set { myBarField = value; }
+			set { nameField = value; }
 		}
 
-		public virtual bool ShouldSerializemyBar()
+		public virtual bool ShouldSerializename()
 		{
-			return (myBar != null);
+			return (name != null);
 		}
 	}
 }
