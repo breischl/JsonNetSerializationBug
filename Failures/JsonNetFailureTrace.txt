@@ -1,0 +1,29 @@
+------ Test started: Assembly: JsonNetTest.dll ------
+
+setFoo.ShouldSerializemyBar() = True
+setFoo.ShouldSerializename() = True
+setFoo.myBar.ShouldSerializemyBaz() = True
+setFoo.myBar.ShouldSerializename() = True
+setFoo.myBar.myBaz[0].ShouldSerializename() = True
+setFoo.myBar.myBaz[0].ShouldSerializemyFrob() = True
+setFoo.myBar.myBaz[0].myFrob[0].ShouldSerializename() = True
+setFoo.myBar.myBaz[1].ShouldSerializename() = True
+setFoo.myBar.myBaz[1].ShouldSerializemyFrob() = True
+setFoo.myBar.myBaz[1].myFrob[0].ShouldSerializename() = True
+setFoo.myBar.myBaz[2].ShouldSerializename() = True
+setFoo.myBar.myBaz[2].ShouldSerializemyFrob() = True
+setFoo.myBar.myBaz[2].myFrob[0].ShouldSerializename() = True
+Trace output:
+2014-03-18T13:21:11.854 Info Started serializing JsonNetTest.Foo. Path ''.
+2014-03-18T13:21:11.860 Verbose ShouldSerialize result for property 'myBar' on JsonNetTest.Foo: False. Path ''.
+2014-03-18T13:21:11.860 Verbose ShouldSerialize result for property 'name' on JsonNetTest.Foo: False. Path ''.
+2014-03-18T13:21:11.862 Info Finished serializing JsonNetTest.Foo. Path ''.
+2014-03-18T13:21:11.862 Verbose Serialized JSON: 
+{}
+Test 'JsonNetTest.JsonTest.Run' failed: 
+  Expected: "a7a5fee4-073b-4c19-9874-fcb8e0a607f4"
+  But was:  null
+  JsonTest.cs(66,0): at JsonNetTest.JsonTest.Run()
+
+0 passed, 1 failed, 0 skipped, took 0.46 seconds (NUnit 2.6.2).
+

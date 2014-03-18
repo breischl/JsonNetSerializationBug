@@ -1,0 +1,81 @@
+------ Test started: Assembly: JsonNetTest.dll ------
+
+setFoo.ShouldSerializemyBar() = True
+setFoo.ShouldSerializename() = True
+setFoo.myBar.ShouldSerializemyBaz() = True
+setFoo.myBar.ShouldSerializename() = True
+setFoo.myBar.myBaz[0].ShouldSerializename() = True
+setFoo.myBar.myBaz[0].ShouldSerializemyFrob() = True
+setFoo.myBar.myBaz[0].myFrob[0].ShouldSerializename() = True
+setFoo.myBar.myBaz[1].ShouldSerializename() = True
+setFoo.myBar.myBaz[1].ShouldSerializemyFrob() = True
+setFoo.myBar.myBaz[1].myFrob[0].ShouldSerializename() = True
+setFoo.myBar.myBaz[2].ShouldSerializename() = True
+setFoo.myBar.myBaz[2].ShouldSerializemyFrob() = True
+setFoo.myBar.myBaz[2].myFrob[0].ShouldSerializename() = True
+Trace output:
+2014-03-18T13:23:12.412 Info Started serializing JsonNetTest.Foo. Path ''.
+2014-03-18T13:23:12.418 Verbose ShouldSerialize result for property 'myBar' on JsonNetTest.Foo: True. Path ''.
+2014-03-18T13:23:12.427 Info Started serializing JsonNetTest.Bar. Path 'myBar'.
+2014-03-18T13:23:12.427 Verbose ShouldSerialize result for property 'myBaz' on JsonNetTest.Bar: True. Path 'myBar'.
+2014-03-18T13:23:12.433 Info Started serializing JsonNetTest.Baz[]. Path 'myBar.myBaz'.
+2014-03-18T13:23:12.435 Info Started serializing JsonNetTest.Baz. Path 'myBar.myBaz'.
+2014-03-18T13:23:12.435 Verbose ShouldSerialize result for property 'myFrob' on JsonNetTest.Baz: True. Path 'myBar.myBaz[0]'.
+2014-03-18T13:23:12.436 Info Started serializing JsonNetTest.Frob[]. Path 'myBar.myBaz[0].myFrob'.
+2014-03-18T13:23:12.436 Info Started serializing JsonNetTest.Frob. Path 'myBar.myBaz[0].myFrob'.
+2014-03-18T13:23:12.437 Verbose ShouldSerialize result for property 'name' on JsonNetTest.Frob: True. Path 'myBar.myBaz[0].myFrob[0]'.
+2014-03-18T13:23:12.444 Info Finished serializing JsonNetTest.Frob. Path 'myBar.myBaz[0].myFrob[0]'.
+2014-03-18T13:23:12.444 Info Finished serializing JsonNetTest.Frob[]. Path 'myBar.myBaz[0].myFrob'.
+2014-03-18T13:23:12.445 Verbose ShouldSerialize result for property 'name' on JsonNetTest.Baz: True. Path 'myBar.myBaz[0].myFrob'.
+2014-03-18T13:23:12.445 Info Finished serializing JsonNetTest.Baz. Path 'myBar.myBaz[0]'.
+2014-03-18T13:23:12.445 Info Started serializing JsonNetTest.Baz. Path 'myBar.myBaz[0]'.
+2014-03-18T13:23:12.445 Verbose ShouldSerialize result for property 'myFrob' on JsonNetTest.Baz: False. Path 'myBar.myBaz[1]'.
+2014-03-18T13:23:12.445 Verbose ShouldSerialize result for property 'name' on JsonNetTest.Baz: False. Path 'myBar.myBaz[1]'.
+2014-03-18T13:23:12.445 Info Finished serializing JsonNetTest.Baz. Path 'myBar.myBaz[1]'.
+2014-03-18T13:23:12.445 Info Started serializing JsonNetTest.Baz. Path 'myBar.myBaz[1]'.
+2014-03-18T13:23:12.445 Verbose ShouldSerialize result for property 'myFrob' on JsonNetTest.Baz: True. Path 'myBar.myBaz[2]'.
+2014-03-18T13:23:12.445 Info Started serializing JsonNetTest.Frob[]. Path 'myBar.myBaz[2].myFrob'.
+2014-03-18T13:23:12.445 Info Started serializing JsonNetTest.Frob. Path 'myBar.myBaz[2].myFrob'.
+2014-03-18T13:23:12.445 Verbose ShouldSerialize result for property 'name' on JsonNetTest.Frob: True. Path 'myBar.myBaz[2].myFrob[0]'.
+2014-03-18T13:23:12.445 Info Finished serializing JsonNetTest.Frob. Path 'myBar.myBaz[2].myFrob[0]'.
+2014-03-18T13:23:12.445 Info Finished serializing JsonNetTest.Frob[]. Path 'myBar.myBaz[2].myFrob'.
+2014-03-18T13:23:12.445 Verbose ShouldSerialize result for property 'name' on JsonNetTest.Baz: True. Path 'myBar.myBaz[2].myFrob'.
+2014-03-18T13:23:12.445 Info Finished serializing JsonNetTest.Baz. Path 'myBar.myBaz[2]'.
+2014-03-18T13:23:12.445 Info Finished serializing JsonNetTest.Baz[]. Path 'myBar.myBaz'.
+2014-03-18T13:23:12.445 Verbose ShouldSerialize result for property 'name' on JsonNetTest.Bar: True. Path 'myBar.myBaz'.
+2014-03-18T13:23:12.445 Info Finished serializing JsonNetTest.Bar. Path 'myBar'.
+2014-03-18T13:23:12.445 Verbose ShouldSerialize result for property 'name' on JsonNetTest.Foo: True. Path 'myBar'.
+2014-03-18T13:23:12.445 Info Finished serializing JsonNetTest.Foo. Path ''.
+2014-03-18T13:23:12.445 Verbose Serialized JSON: 
+{
+  "myBar": {
+    "myBaz": [
+      {
+        "myFrob": [
+          {
+            "name": "48211ab2-2e9a-4c15-808e-834223ca7909"
+          }
+        ],
+        "name": "e00cdc76-15df-43c6-aedc-b3639622fbb2"
+      },
+      {},
+      {
+        "myFrob": [
+          {
+            "name": "99a19740-d7a9-4868-b429-13e3e84a81bb"
+          }
+        ],
+        "name": "61b494a4-3874-4b8b-b6ec-a344e0a17a65"
+      }
+    ],
+    "name": "c704ed0f-75eb-44d6-b72a-07fe47567ab6"
+  },
+  "name": "67cfe367-0abe-426b-a634-1574e26e5919"
+}
+Test 'JsonNetTest.JsonTest.Run' failed: 
+  Expected: "b2ca13e7-5885-4b88-96e6-cb97a5ef40b6"
+  But was:  null
+	JsonTest.cs(74,0): at JsonNetTest.JsonTest.Run()
+
+0 passed, 1 failed, 0 skipped, took 0.51 seconds (NUnit 2.6.2).
+
