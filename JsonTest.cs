@@ -12,7 +12,7 @@ using NUnit.Framework;
 namespace JsonNetTest
 {
 	[TestFixture]
-	public class JsonTest2
+	public class JsonTest
 	{
 		[Test]
 		public void Run()
